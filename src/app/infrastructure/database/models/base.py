@@ -9,7 +9,7 @@ class Base(DeclarativeBase):
 
     repr_cols_num: int = 2
     repr_cols: Tuple[str, ...] = tuple()
-
+    #строковое представление экземпляра класса, выглядит не очень.
     def __repr__(self) -> str:
         columns_to_display: List[str] = []
         columns = list(self.__table__.columns.keys())

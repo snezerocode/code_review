@@ -78,6 +78,7 @@ async def start_processes() -> None:
 
     :return: None
     """
+    # какое то подключение мидлваров для обработки запросов
     app = FastAPI(docs_url=None, redoc_url=None)
     app.add_middleware(
         CORSMiddleware,  # type: ignore

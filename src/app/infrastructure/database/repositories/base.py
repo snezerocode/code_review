@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-
+#определние путых методов в репозитории для дальнейшего переопределения
 class BaseRepository(ABC):
     @abstractmethod
     async def get_one(self, **kwargs):

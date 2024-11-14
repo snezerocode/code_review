@@ -10,7 +10,7 @@ from src.app.infrastructure.database.repositories.blog import BlogRepository
 
 router = Router()
 
-
+#ручки для ТГ бота
 @router.message(Form.title, AdminFilter())
 async def handle_title(message: Message, state: FSMContext) -> None:
     """
@@ -20,6 +20,7 @@ async def handle_title(message: Message, state: FSMContext) -> None:
     :param state: The FSM context
     :return: None
     """
+    # переключение стейтов бота по диалогу
     await state.update_data(title=message.text)
     await state.set_state(Form.content)
 

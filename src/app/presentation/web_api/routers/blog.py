@@ -9,6 +9,7 @@ router = APIRouter()
 
 @alru_cache()
 @router.get("/get_blogs")
+# логика в репозиториях
 async def get_blogs(repository: BlogRepository = Depends(get_blog_repository)):
     """
     Get blogs counter

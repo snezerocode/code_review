@@ -9,7 +9,7 @@ class Form(StatesGroup):
     """
     States group for the blog post form, including title, content, and image URI.
     """
-
+    # модели аиограмм?
     title: State = State()
     content: State = State()
     image_uri: State = State()

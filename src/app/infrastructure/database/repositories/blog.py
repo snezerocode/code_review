@@ -7,7 +7,7 @@ from src.app.infrastructure.database.repositories.base import BaseRepository
 from src.app.infrastructure.database import engine
 from src.app.infrastructure.database.models.blog import BlogORM
 
-
+#объявление сессии в репозитории без контекстного ДБ менеджера
 class BlogRepository(BaseRepository):
     def __init__(self):
         self.session: async_sessionmaker
@@ -38,6 +38,7 @@ class BlogRepository(BaseRepository):
         :return: BlogORM
         """
         async with self.session() as session:
+            # интересный синтаксис, но кажется более читабельно делать через несколько шагов
             if all_blogs := (await session.execute(select(BlogORM))).scalars().all():
                 return all_blogs
 
